@@ -1,5 +1,3 @@
-import { Feather } from "@expo/vector-icons";
-import { useEffect, useState } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import React from "react";
 import CustomButton from "./custom-button";
@@ -13,21 +11,6 @@ export default function CopyText({
 	copyHandler: () => void;
 	title: string;
 }) {
-	const [copied, setCopied] = useState(false);
-
-	useEffect(() => {
-		let timer = null;
-		if (copied) {
-			timer = setTimeout(() => {
-				copyHandler();
-				setCopied(false);
-			}, 2000);
-		}
-		return () => {
-			clearTimeout(timer!);
-		};
-	}, [copied]);
-
 	return (
 		<View style={{ gap: 5 }}>
 			<Text style={styles.title}>{title}</Text>
