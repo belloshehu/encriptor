@@ -20,7 +20,7 @@ export default function CustomButton({
 		<TouchableOpacity
 			style={{
 				...styles.button,
-				backgroundColor: enabled ? "green" : "gray",
+				backgroundColor: enabled ? "green" : "#ccc",
 				...style,
 			}}
 			onPress={onPress}
@@ -32,7 +32,7 @@ export default function CustomButton({
 }
 const styles = StyleSheet.create({
 	button: {
-		width: "100%",
+		width: "auto",
 		borderRadius: 10,
 		backgroundColor: "green",
 		padding: 15,
